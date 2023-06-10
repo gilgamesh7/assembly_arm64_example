@@ -7,6 +7,7 @@ First assembly level language programs and C, for apple silicon ARM 64
 - [Supervisor (svc) Calls for Apple](https://opensource.apple.com/source/xnu/xnu-1504.3.12/bsd/kern/syscalls.master)
 - [Assembly Language Programming with ARM – Full Tutorial for Beginners](https://youtu.be/gfmRrPjnEw4)
 - [CPUlator](https://cpulator.01xz.net/)
+- [ARM64 M1 Registers](https://eclecticlight.co/2021/06/16/code-in-arm-assembly-registers-explained/)
 
 # Prerequisites
 - Install xcode : xcode-select --install
