@@ -3,6 +3,7 @@ First assembly level language programs and C, for apple silicon ARM 64
 
 
 # Links
+- [The Art of ARM Assembly, Volume 1 , Randall Hyde](https://learning.oreilly.com/library/view/the-art-of/9798341620018/xhtml/title.xhtml)
 - [how hello world for arm64 assembly really works (apple silicon)](https://youtu.be/d0OXp0zqIo0)
 - [Supervisor (svc) Calls for Apple](https://opensource.apple.com/source/xnu/xnu-1504.3.12/bsd/kern/syscalls.master)
 - [Assembly Language Programming with ARM – Full Tutorial for Beginners](https://youtu.be/gfmRrPjnEw4)
@@ -41,4 +42,18 @@ First assembly level language programs and C, for apple silicon ARM 64
 |--------|-------------|-----------------------|
 | System Call Register | R7 | X16 |
 | Software Interrupt | swi | svc |
+
+# Programs
+## Listing1-1.S
+### Type 1
+- as -arch arm64 Listing1-1.S -o Listing1-1.o
+- ld -o Listing1-1 Listing1-1.o -lSystem \
+     -syslibroot `xcrun -sdk macosx --show-sdk-path` \
+     -e _main -arch arm64 
+- ./Listing1-1
+### Type 2
+- g++ -o Listing1-1 Listing1-1.S OR
+- clang -o Listing1-1 Listing1-1.S (only on macos)
+- ./Listing1-1
+- To Explain : g++ -E Listing1-1.S
 
