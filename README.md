@@ -57,3 +57,6 @@ First assembly level language programs and C, for apple silicon ARM 64
 - ./Listing1-1
 - To Explain : g++ -E Listing1-1.S
 
+## Listing1-2.cpp & Listing1-3.S
+- g++ -o Listing1-2 Listing1-2.cpp Listing1-3.S
+- ./Listing1-2
