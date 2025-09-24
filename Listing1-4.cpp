@@ -1,0 +1,48 @@
+// Generic C++ driver program to call AoAA example programs 
+// Also includes a "readLine" function that reads a string 
+// from the user and passes it on to the assembly language 
+// code 
+//
+// Need to include stdio.h so this program can call "printf"
+// and stdio.h so this program can call strlen.
+
+#include <errno.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+// Extern "C" namespace prevents "name mangling" by the C++
+// compiler:
+extern "C"{
+    // asmMain is the assembly language code's "main program":
+
+    void asmMain(void);
+
+    // getTitle returns a pointer to a string of characters 
+    // from the assembly code that specifies the title of that 
+    // program (that makes this program generic and usable 
+    // with a large number of sample programs in "The Art of 
+    // ARM Assembly Language"):
+    char *getTitle(void);
+
+    // C++ function that the assembly 
+    // language program can call: 
+    int readLine(char *dest, int maxLen);
+}
+
+// readLine reads a line of text from the user (from the 
+// console device) and stores that string into the destination 
+// buffer the first argument specifies. Strings are limited in 
+// length to the value specified by the second argument 
+// (minus 1). 
+//
+// This function returns the number of characters actually 
+// read, or -1 if there was an error. 
+//
+// If the user enters too many characters (maxLen or 
+// more), this function returns only the first maxLen - 1 
+// characters. This is not considered an error. 
+
+int readLine(char *dest, int maxLen){
+    
+}
