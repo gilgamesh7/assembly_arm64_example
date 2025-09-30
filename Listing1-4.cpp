@@ -13,7 +13,8 @@
 
 // Extern "C" namespace prevents "name mangling" by the C++
 // compiler:
-extern "C"{
+extern "C"
+{
     // asmMain is the assembly language code's "main program":
 
     void asmMain(void);
@@ -43,6 +44,23 @@ extern "C"{
 // more), this function returns only the first maxLen - 1 
 // characters. This is not considered an error. 
 
-int readLine(char *dest, int maxLen){
-    
+int readLine(char *dest, int maxLen)
+{
+    // Note: fgets returns NULL if there was an error, else 
+    // it returns a pointer to the string data read (which 
+    // will be the value of the dest pointer)
+    char *result = fgets(dest, maxLen, stdin);
+    if (result != NULL){
+        // Wipe out the newline character at the 
+        // end of the string
+        int len = strlen(result);
+        if (len > 0)
+        {
+            dest[len - 1] = 0;
+        }
+        return len;    
+    }
+    // If there was an error
+    return -1;
 }
+
