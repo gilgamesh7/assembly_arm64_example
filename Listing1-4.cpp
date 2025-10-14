@@ -64,3 +64,13 @@ int readLine(char *dest, int maxLen)
     return -1;
 }
 
+int main(void)
+{
+    // Get the assembly language program's title
+    char *title = getTitle();
+
+    printf("Calling %s: \n", title);
+    asmMain();
+    printf("%s terminated\n", title);
+}
+
